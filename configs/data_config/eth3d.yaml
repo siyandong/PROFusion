@@ -1,0 +1,24 @@
+%YAML:1.0
+
+# input and output directories
+data_root: "data/eth3d/cs1"
+output_folder: "results/cs1"
+
+# camera parameters
+fx: 726.2874
+fy: 726.2874
+cx: 354.6497
+cy: 186.4657
+image_width: 739
+image_height: 458
+depth_ratio: 5.0
+
+# scene configuration
+voxel_size: 10
+truncated_size: 60
+voxel_x: 512
+voxel_y: 512
+voxel_z: 512
+init_x: 256
+init_y: 256
+init_z: 256

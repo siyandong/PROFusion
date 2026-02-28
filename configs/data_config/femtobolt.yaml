@@ -1,0 +1,29 @@
+%YAML:1.0
+
+# input and output directories
+data_root: "data/femtobolt/p207"
+output_folder: "results/p207"
+
+# camera parameters
+fx: 500.0
+fy: 500.0
+cx: 320.0
+cy: 240.0
+image_width: 640
+image_height: 480
+depth_ratio: 1.0
+
+# scene configuration
+voxel_size: 20
+truncated_size: 60
+voxel_x: 900
+voxel_y: 300
+voxel_z: 500
+init_x: 7000
+init_y: 0
+init_z: 3000
+rotation:
+  rx: -30.0
+  ry: -50.0
+  rz: 0.0
+  order: "xzy"

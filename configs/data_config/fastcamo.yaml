@@ -1,0 +1,24 @@
+%YAML:1.0
+
+# input and output directories
+data_root: "data/fastcamo/example"
+output_folder: "results/example"
+
+# camera parameters
+fx: 320.0
+fy: 320.0
+cx: 319.5
+cy: 239.5
+image_width: 640
+image_height: 480
+depth_ratio: 1.0
+
+# scene configuration
+voxel_size: 20
+truncated_size: 60
+voxel_x: 500
+voxel_y: 300
+voxel_z: 750
+init_x: -1620
+init_y: 880
+init_z: 4480

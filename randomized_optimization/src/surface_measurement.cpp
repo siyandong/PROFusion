@@ -1,0 +1,40 @@
+#include <opt_fus.h>
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wall"
+#pragma GCC diagnostic ignored "-Wextra"
+#pragma GCC diagnostic ignored "-Weffc++"
+#include <opencv2/cudaimgproc.hpp>
+#include <opencv2/cudawarping.hpp>
+#pragma GCC diagnostic pop
+
+using cv::cuda::GpuMat;
+
+namespace optfus {
+    namespace internal {
+
+        namespace cuda { 
+
+            void compute_vertex_map(const GpuMat& depth_map, GpuMat& vertex_map, const float depth_cutoff,
+                                    const CameraParameters cam_params, GpuMat& valid_pixels_count);
+            void compute_normal_map(const GpuMat& vertex_map, GpuMat& normal_map);
+        }
+
+        void surface_measurement(const cv::Mat_<cv::Vec3b>& color_frame,
+                                      const cv::Mat_<float>& depth_frame,
+                                      FrameData& frame_data,
+                                      const CameraParameters& camera_params,
+                                      const float depth_cutoff)
+        {
+            frame_data.color_map.upload(color_frame);
+            frame_data.depth_map.upload(depth_frame);
+            
+            frame_data.gpu_valid_pixels_count.setTo(0);
+            
+            cuda::compute_vertex_map(frame_data.depth_map, frame_data.vertex_map,
+                                     depth_cutoff, camera_params,frame_data.gpu_valid_pixels_count);
+            frame_data.gpu_valid_pixels_count.download(frame_data.valid_pixels_count);
+            cuda::compute_normal_map(frame_data.vertex_map, frame_data.normal_map);
+        }
+    }
+}

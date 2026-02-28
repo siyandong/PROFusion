@@ -1,0 +1,4 @@
+# opencv-python
+tqdm
+scipy
+huggingface-hub[torch]>=0.22
