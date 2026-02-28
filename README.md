@@ -45,14 +45,14 @@ pip install -r requirements.txt
 # install packages required by the optimization and fusion module
 conda install -y -c conda-forge gcc_linux-64=11.4.0 gxx_linux-64=11.4.0 pybind11 
 ```
-Install Eigen and OpenCV with CUDA required by the optimization and fusion module, following [this link](TODO)
+Install Eigen and OpenCV with CUDA required by the optimization and fusion module, following [this link](https://github.com/siyandong/PROFusion/blob/main/assets/install_from_source.md)
 
-3. Build PROFusion: Set sm_xx and compute_xx in [L30 in CMakeLists.txt](TODO) according to your architecture and run the following script
+3. Build PROFusion: Set sm_xx and compute_xx in [L30 in CMakeLists.txt](https://github.com/siyandong/PROFusion/blob/be9dd6c739979fd93a43a944210176606977b50e/CMakeLists.txt#L30) according to your architecture and run the following script
 ```
 bash build.sh
 ```
 
-4. Optional: If you cannot load the pretrained model automatically, [manually download](https://huggingface.co/siyan824/profusion_pr/blob/main/profusion_pr.pth) and format the directory as shown in [L11 in pose_regression/run.py](TODO)
+4. Optional: If you cannot load the pretrained model automatically, [manually download](https://huggingface.co/siyan824/profusion_pr/blob/main/profusion_pr.pth) and format the directory as shown in [L11 in pose_regression/run.py](https://github.com/siyandong/PROFusion/blob/be9dd6c739979fd93a43a944210176606977b50e/pose_regression/run.py#L11)
 
 5. Optional: Acceleration
 ```bash
