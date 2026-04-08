@@ -11,7 +11,7 @@
     ·
     <a href="https://yanchaoyang.github.io/">Yanchao Yang</a>
   </p>
-  <h3 align="center"><a href="https://arxiv.org/abs/2509.24236">Paper</a> | <a href="TODO">Video</a> | <a href="TODO">Poster</a> </h3>
+  <h3 align="center"><a href="https://arxiv.org/abs/2509.24236">Paper</a> | <a href="https://drive.google.com/file/d/1Mptyq57734623jQ0Roy02RsaVPYnmnVX/view?usp=sharing">Video</a> | <a href="TODO">Poster</a> </h3>
 <p align="center">
  
 <div align="center">
